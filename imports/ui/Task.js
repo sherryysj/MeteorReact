@@ -12,6 +12,11 @@ export const Task = ({task}) => {
     })
   )
 
+  // backend - call api to delete task data
+  const onDeleteClick = () => {
+      TasksCollection.remove(task._id)
+  }
+
   // frontend - UI
   return (
     <li key={task._id}>
@@ -22,6 +27,7 @@ export const Task = ({task}) => {
             readOnly
         />
         <span>{task.text}</span>
+        <button onClick={() => onDeleteClick()}>&times;</button>
     </li>
   )
 }
