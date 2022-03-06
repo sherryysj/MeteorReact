@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hello } from './Hello.jsx';
 import { Info } from './Info.jsx';
+import { TaskForm } from './TaskForm.js';
 import { Tasks } from './Tasks';
 
 export const App = () => (
@@ -9,5 +10,6 @@ export const App = () => (
     <Hello/>
     <Info/>
     <Tasks />
+    <TaskForm />
   </div>
 );
