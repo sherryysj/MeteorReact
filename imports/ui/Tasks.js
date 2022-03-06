@@ -4,7 +4,8 @@ import { TasksCollection } from '../api/collections';
 
 export const Tasks = ({task}) => {
 
-  const tasks = useTracker(() => TasksCollection.find().fetch());
+  // retrive tasks and sort by lastest created time
+  const tasks = useTracker(() => TasksCollection.find({},{sort: {createdAt: -1}}).fetch());
 
   return (
     <ul>
