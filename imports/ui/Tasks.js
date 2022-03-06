@@ -9,7 +9,7 @@ export const Tasks = ({task}) => {
   return (
     <ul>
         {tasks.map(task => 
-            <li>{task.text}</li>
+            <li key={task._id}>{task.text}</li>
         )}
     </ul>
   )
