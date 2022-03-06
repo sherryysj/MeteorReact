@@ -13,6 +13,7 @@ export const TaskForm = () => {
 
       TasksCollection.insert({
           text:text.trim(),
+          isChecked: false,
           createdAt: new Date()
       });
 

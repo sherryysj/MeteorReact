@@ -8,7 +8,7 @@ function insertLink({ title, url }) {
 }
 
 // arrow function
-const insertTask = taskText => TasksCollection.insert({text:taskText});
+//const insertTask = taskText => TasksCollection.insert({text:taskText});
 
 Meteor.startup(() => {
   // If the Links collection is empty, add some data.
@@ -34,15 +34,4 @@ Meteor.startup(() => {
     });
   }
 
-  if (TasksCollection.find().count() === 0){
-    [
-      'First Task',
-      'Second Task',
-      'Third Task',
-      'Fourth Task',
-      'Fifth Task',
-      'Sixth Task',
-      'Seventh Task'
-    ].forEach(insertTask)
-  }
 });
