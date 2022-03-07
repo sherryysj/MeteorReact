@@ -26,8 +26,14 @@ export const Task = ({task}) => {
             onClick={() => onCheckboxClick()}
             readOnly
         />
-        <span>{task.text} {task.createdAt.toDateString().substring(4)}</span>
-        <button onClick={() => onDeleteClick()}>&times;</button>
+        <div className="taskText">
+          <p className="taskName">{task.text}</p> 
+          <p className="taskDate">{task.createdAt.toDateString().substring(4)}</p>
+        </div>
+        <button 
+          className="deleteButton"
+          onClick={() => onDeleteClick()}
+        >&times;</button>
     </li>
   )
 }

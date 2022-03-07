@@ -9,7 +9,7 @@ export const App = () => {
   const [hideDone, setHideDone] = useState(false);
 
   return (
-    <div>
+    <div className="app">
       <Header />
       <TaskForm />
       <TaskFilter 

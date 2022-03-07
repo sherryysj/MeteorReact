@@ -22,7 +22,7 @@ export const TaskForm = () => {
 
   // frontend - UI
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="taskform">
         <input
             type="text"
             placeholder='type to add new tasks'

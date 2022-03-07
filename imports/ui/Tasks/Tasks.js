@@ -23,9 +23,11 @@ export const Tasks = ({hideDone}) => {
   // frontend - UI
   return (
     <div>
-        <p>You have completed {doneTasksCount} {doneTasksCount > 1? "tasks" : "task"}.</p>
-        <p>You still have {pendingTasksCount} {pendingTasksCount > 1? "tasks" : "task"} to do.</p>
-        <ul>
+        <div className="taskCounter">        
+            <p>You have completed {doneTasksCount} {doneTasksCount > 1? "tasks" : "task"}.</p>
+            <p>You still have {pendingTasksCount} {pendingTasksCount > 1? "tasks" : "task"} to do.</p>
+        </div>
+        <ul className="list">
             {tasks.map(task => 
                 <Task 
                     key={task._id}
