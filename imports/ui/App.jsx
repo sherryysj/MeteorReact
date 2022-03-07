@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Hello } from './Hello.jsx';
 import { Info } from './Info.jsx';
+import { TaskFilter } from './TaskFilter.js';
 import { TaskForm } from './TaskForm.js';
 import { Tasks } from './Tasks/Tasks.js';
 
 export const App = () => {
+
+  const [hideDone, setHideDone] = useState(false);
 
   return (
     <div>
@@ -12,7 +15,11 @@ export const App = () => {
       <Hello/>
       <Info/>
       <TaskForm />
-      <Tasks /> 
+      <TaskFilter 
+        hideDone={hideDone} 
+        setHideDone={setHideDone}
+      />
+      <Tasks hideDone={hideDone}/> 
     </div>
   );
 
