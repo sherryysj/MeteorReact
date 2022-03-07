@@ -1,4 +1,99 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  padding: 10px;
   font-family: sans-serif;
+  width:500px;
+  border: 1px solid rgb(245, 142, 194);
+  margin: auto;
+}
+
+.header{
+  background-color: rgb(245, 142, 194);
+  margin:0;
+}
+
+.taskform{
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.taskform > input {
+  border: 1px solid rgb(245, 142, 194);
+  padding:10px 6px;
+  font-size: 1em;
+  border-radius: 0.3rem;
+  margin-right: 10px;
+  width: 250px;
+}
+
+.taskform > button {
+  background-color: rgb(245, 142, 194);
+  padding: 10px 6px;
+  font-size: 1em;
+  border-radius: 0.3rem;
+  cursor:pointer;
+  border:none;
+}
+
+.taskform > button:hover {
+  background-color: rgb(250, 129, 190);
+}
+
+.filterButton {
+  background-color: rgb(245, 142, 194);
+  margin-left: 5px;
+  padding: 5px 5px;
+  font-size: 1em;
+  border-radius: 0.3rem;
+  cursor:pointer;
+  border:none;
+  margin-top: 10px;
+}
+
+.taskCounter{
+  margin: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list{
+  list-style-type: none;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.list > li {
+  margin-top:2px;
+  display: flex;
+  align-items: center;
+}
+
+.taskText{
+  margin-left: 5px;
+  display: flex;
+
+}
+
+.taskName{
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.taskDate{
+  margin-right: 5px;
+  color: rgb(99, 99, 99);
+}
+
+.deleteButton{
+  background-color: rgb(245, 142, 194);
+  padding: 2px 2px;
+  font-size: 1em;
+  border-radius: 0.3rem;
+  cursor:pointer;
+  border:none;
 }
