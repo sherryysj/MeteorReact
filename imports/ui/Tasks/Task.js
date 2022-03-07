@@ -1,5 +1,5 @@
 import React from 'react'
-import { TasksCollection } from '../api/collections';
+import { TasksCollection } from '../../api/collections';
 
 export const Task = ({task}) => {
 
