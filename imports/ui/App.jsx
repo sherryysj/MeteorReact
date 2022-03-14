@@ -19,9 +19,9 @@ export const App = () => {
       <Header />
       { user ? (
         <>
-          <p>{user.username}</p>
-          <div onClick={logout}>
-            <p>Log out</p>
+          <div className="userControl">
+            <p>{user.username}</p>
+            <p onClick={logout} className="logout">Log out</p>
           </div>
           <TaskForm user={user}/>
           <TaskFilter 
