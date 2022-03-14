@@ -3,22 +3,24 @@ import { Task } from './Task';
 import { useTracker } from 'meteor/react-meteor-data';
 import { TasksCollection } from '../../api/collections';
 
-export const Tasks = ({hideDone}) => {
+export const Tasks = ({hideDone,user}) => {
 
   // hide and show completed task filter
   // must put before below function since below function calls it
   const hideDoneFilter = { isChecked: {$ne: true} } 
 
+  const userFilter = user ? { userId: user._id } : {};
+
   // backend - call api to retrive data
   // retrive tasks and sort by lastest created time
   const tasks = useTracker(() => TasksCollection.find(
-      hideDone ? hideDoneFilter : {}, 
+      hideDone ? {...hideDoneFilter,...userFilter} : {...userFilter}, 
       {sort: {createdAt: -1}}
     ).fetch()
   );
 
-  const pendingTasksCount = useTracker(() => TasksCollection.find(hideDoneFilter).count());
-  const doneTasksCount = useTracker(() => TasksCollection.find({isChecked: {$eq: true}}).count());
+  const pendingTasksCount = useTracker(() => TasksCollection.find({...hideDoneFilter, ...userFilter}).count());
+  const doneTasksCount = useTracker(() => TasksCollection.find({...userFilter, isChecked: {$eq: true}}).count());
 
   // frontend - UI
   return (
