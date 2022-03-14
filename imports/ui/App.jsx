@@ -12,11 +12,17 @@ export const App = () => {
 
   const [hideDone, setHideDone] = useState(false);
 
+  const logout =() => Meteor.logout();
+
   return (
     <div className="app">
       <Header />
       { user ? (
         <>
+          <p>{user.username}</p>
+          <div onClick={logout}>
+            <p>Log out</p>
+          </div>
           <TaskForm user={user}/>
           <TaskFilter 
             hideDone={hideDone} 
