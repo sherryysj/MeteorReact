@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { TasksCollection } from '../api/collections';
 
-export const TaskForm = () => {
+export const TaskForm = ({user}) => {
 
   const [text, setText] = useState("");
-
+  
   // backend - call api to insert the task into database
   const handleSubmit = e => {
       e.preventDefault();
@@ -14,6 +14,7 @@ export const TaskForm = () => {
       TasksCollection.insert({
           text:text.trim(),
           isChecked: false,
+          userId:user._id,
           createdAt: new Date()
       });
 

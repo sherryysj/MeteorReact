@@ -3,7 +3,7 @@ import { Task } from './Task';
 import { useTracker } from 'meteor/react-meteor-data';
 import { TasksCollection } from '../../api/collections';
 
-export const Tasks = ({hideDone}) => {
+export const Tasks = ({hideDone,user}) => {
 
   // hide and show completed task filter
   // must put before below function since below function calls it
